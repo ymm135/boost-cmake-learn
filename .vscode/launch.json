@@ -5,11 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) 启动",
+            "name": "main启动",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/boost_learn",
-            "args": [],
+            "args": ["mqp"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

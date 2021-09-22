@@ -34,8 +34,13 @@ find_package(Boost COMPONENTS thread filesystem system unit_test_framework REQUI
 # Assign the include directories
 include_directories(${Boost_INCLUDE_DIRS})
 
+#gdb 调试参数
+SET(CMAKE_BUILD_TYPE "Debug")
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 # Build
 #set(SOURCE_FILES src/main.cpp $<TARGET_OBJECTS:demo_objects>)
 set(SOURCE_FILES src/main.cpp ${INC_FILES} ${SRC_FILES})
 add_executable(boost_learn ${SOURCE_FILES})
-target_link_libraries(boost_learn ${Boost_LIBRARIES})
+target_link_libraries(boost_learn ${Boost_LIBRARIES} rt)
