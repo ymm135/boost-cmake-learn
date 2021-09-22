@@ -8,6 +8,9 @@ project(${PROJECT_NAME_STR})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
+#增加pthread依赖库
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+
 # Include 目录
 set(BOOST_LEARN_INCLUDES ${BOOST_LEARN_INCLUDES} ${PROJECT_SOURCE_DIR}/src)
 
@@ -23,10 +26,10 @@ file(GLOB_RECURSE SRC_FILES src/*/*.cpp)
 #ADD_LIBRARY(demo_objects OBJECT ${INC_FILES} ${SRC_FILES})
 
 # 添加依赖 Found Boost: /usr/local/include (found version "1.69.0") found components: filesystem system unit_test_framework 
-find_package(Boost COMPONENTS filesystem system unit_test_framework REQUIRED)
+find_package(Boost COMPONENTS thread filesystem system unit_test_framework REQUIRED)
 
 # Unit tests
-add_subdirectory(test)
+# add_subdirectory(test)
 
 # Assign the include directories
 include_directories(${Boost_INCLUDE_DIRS})
