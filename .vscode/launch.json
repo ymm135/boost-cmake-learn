@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/boost_learn",
-            "args": ["mqp"],
+            "args": ["smm"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],

@@ -47,6 +47,8 @@
         "utility": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "cstddef": "cpp"
+        "cstddef": "cpp",
+        "string": "cpp",
+        "memory": "cpp"
     }
 }

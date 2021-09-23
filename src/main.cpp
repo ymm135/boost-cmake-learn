@@ -4,6 +4,8 @@
 #include "thread/thread_ops.h"
 #include "mq/consumer.h"
 #include "mq/producer.h"
+#include "sm/share_memory.h"
+
 
 typedef void (*pFunc)(char *msg);
 
@@ -42,6 +44,13 @@ int main(int argc, char **argv)
     {
         xm::Producer producer;
         producer.start();
+    }
+
+    // share memory maps
+    if (ops.compare("smm") == 0)
+    {
+        xm::ShareMemory sm;
+        sm.createMaps();
     }
 
     return 0;
