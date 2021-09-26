@@ -49,6 +49,11 @@
         "typeinfo": "cpp",
         "cstddef": "cpp",
         "string": "cpp",
-        "memory": "cpp"
+        "memory": "cpp",
+        "algorithm": "cpp",
+        "random": "cpp",
+        "*.inc": "cpp",
+        "unordered_set": "cpp",
+        "mutex": "cpp"
     }
 }

@@ -5,7 +5,7 @@
 #include "mq/consumer.h"
 #include "mq/producer.h"
 #include "sm/share_memory.h"
-
+#include "protobuf/addressbook.h"
 
 typedef void (*pFunc)(char *msg);
 
@@ -51,6 +51,13 @@ int main(int argc, char **argv)
     {
         xm::ShareMemory sm;
         sm.createMaps();
+    }
+
+    // proto
+    if (ops.compare("proto") == 0)
+    {
+        xm::ProtoBufDemo proto;
+        proto.start();
     }
 
     return 0;

@@ -25,12 +25,9 @@ namespace xm
             message_queue::remove("message_queue");
 
             //Create a message_queue.
-            message_queue mq(create_only //only create
-                             ,
-                             "message_queue" //name
-                             ,
-                             100 //max message number
-                             ,
+            message_queue mq(create_only, //only create
+                             "message_queue", //name
+                             100,        //max message number
                              sizeof(int) //max message size
             );
 
@@ -40,7 +37,7 @@ namespace xm
                 mq.send(&i, sizeof(i), 0);
                 std::cout << "send msg:" << i << std::endl;
 
-                boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(3)); 
+                boost::thread::sleep(boost::get_system_time() + boost::posix_time::seconds(3));
             }
         }
         catch (interprocess_exception &ex)

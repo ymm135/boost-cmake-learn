@@ -20,8 +20,7 @@ namespace xm
         try
         {
             //Open a message queue.
-            message_queue mq(open_only //only create
-                             ,
+            message_queue mq(open_only,      //only create
                              "message_queue" //name
             );
 
@@ -44,7 +43,7 @@ namespace xm
             message_queue::remove("message_queue");
             std::cout << ex.what() << std::endl;
         }
-        
+
         message_queue::remove("message_queue");
     }
 

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/boost_learn",
-            "args": ["smm"],
+            "args": ["proto"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
