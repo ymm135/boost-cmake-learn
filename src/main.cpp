@@ -6,6 +6,7 @@
 #include "mq/producer.h"
 #include "sm/share_memory.h"
 #include "protobuf/addressbook.h"
+#include "base/base.h"
 
 typedef void (*pFunc)(char *msg);
 
@@ -14,7 +15,7 @@ int main(int argc, char **argv)
     std::cout << "Hello, Boost!" << std::endl;
 
     std::string ops = "null";
-    if (argc > 0)
+    if (argc > 1)
     {
         ops = argv[1];
     }
@@ -30,6 +31,13 @@ int main(int argc, char **argv)
         //线程测试
         xm::ThreadOps threadOps;
         threadOps.createThread();
+    }
+
+        //消息队列测试
+    if (ops.compare("base") == 0)
+    {
+        xm::BaseOps base;
+        base.run();
     }
 
     //消息队列测试

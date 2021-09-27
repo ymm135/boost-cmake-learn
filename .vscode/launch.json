@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/bin/boost_learn",
-            "args": ["proto"],
+            "args": ["base"],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
             "environment": [],
@@ -21,7 +21,8 @@
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
+            "preLaunchTask": "cmake-build",
         }
     ]
 }

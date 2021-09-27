@@ -1,23 +1,26 @@
 #pragma once
-#include "base.h"
 #include <iostream>
-#include <vector>
 #include <string>
+#include <algorithm>
+#include <vector>
+
+#include "base.h"
 
 using namespace std;
 
 namespace xm
 {
-    Base::Base(/* args */)
+    BaseOps::BaseOps(/* args */)
     {
     }
 
-    Base::~Base()
+    BaseOps::~BaseOps()
     {
     }
 
-    void Base::run()
+    void BaseOps::run()
     {
+        vectorExample();
     }
 
     /**
@@ -29,7 +32,7 @@ namespace xm
      * 3.at 得到编号位置的数据
      * 4.begin 得到数组头的指针
      * 5.end 得到数组的最后一个单元+1的指针
-     * 6．front 得到数组头的引用
+     * 6.front 得到数组头的引用
      * 7.back 得到数组的最后一个单元的引用
      * 8.max_size 得到vector最大可以是多大
      * 9.capacity 当前vector分配的大小
@@ -42,11 +45,48 @@ namespace xm
      * 16.rend 将vector反转构的结束指针返回(其实就是原来的begin-1)
      * 17.empty 判断vector是否为空
      * */
+    void printVector(vector<string> *v)
+    {
+        for (int i = 0; i < v->size(); i++)
+        {
+            cout << i << "." << (*v)[i] << ", ";
+        }
+        cout << "" << endl;
+        cout << "" << endl;
+    }
 
-    void Base::vector()
+    void BaseOps::vectorExample()
     {
         cout << "===========vector===========" << endl;
 
+        vector<string> books;
+        books.push_back("平凡的世界");
+        books.push_back("pingfandeshijie");
+        books.push_back("principle");
+        books.push_back("ooooo");
+        books.push_back("aaaaaa");
+        books.push_back("bbbbbbb");
+        books.push_back("ttttttt");
+        books.push_back("uuuuuuu");
+
+        printVector(&books);
+
+        cout << ">> pop_back " << endl;
+        books.pop_back();
+        printVector(&books);
+
+        cout << ">> sort " << endl;
+        sort(books.begin(), books.end()); // begin 得到数组头的指针  end 得到数组的最后一个单元+1的指针
+        printVector(&books);
+
+        // 删除元素 返回值：指向删除元素(或范围)的下一个元素。 遍历查找的时候删除
+        // 迭代器与指针还是有差异的，如果元素被删除，迭代器就失效了，指针不会!
+        cout << ">> erase begin " << endl;
+        vector<string>::iterator eraseIt = books.erase(books.begin());
+        printVector(&books);
+        cout << "*eraseIt=" << *eraseIt << endl;
+
+        cout << "----------------------------" << endl;
     }
 
 } // namespace xm

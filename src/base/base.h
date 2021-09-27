@@ -1,17 +1,17 @@
-#pragma once 
+#pragma once
 
 namespace xm
 {
-    class Base
+    class BaseOps
     {
     private:
         /* data */
     public:
-        Base(/* args */);
-        ~Base();
+        BaseOps(/* args */);
+        ~BaseOps();
 
         void run();
-        void vector();
+        void vectorExample();
     };
-      
-} // namespace xm 
+
+} // namespace xm
