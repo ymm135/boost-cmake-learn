@@ -8,10 +8,14 @@ namespace xm
         /* data */
     public:
         BaseOps(/* args */);
+
         ~BaseOps();
 
         void run();
+
         void vectorExample();
+
+        void templateExample();
     };
 
 } // namespace xm

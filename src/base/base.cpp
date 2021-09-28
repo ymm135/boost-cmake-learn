@@ -1,15 +1,18 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include <algorithm>
 #include <vector>
-
+#include "myvector.h"
+#include "teacher.h"
 #include "base.h"
 
 using namespace std;
 
 namespace xm
 {
+
     BaseOps::BaseOps(/* args */)
     {
     }
@@ -21,6 +24,7 @@ namespace xm
     void BaseOps::run()
     {
         vectorExample();
+        templateExample();
     }
 
     /**
@@ -47,8 +51,7 @@ namespace xm
      * */
     void printVector(vector<string> *v)
     {
-        for (int i = 0; i < v->size(); i++)
-        {
+        for (int i = 0; i < v->size(); i++) {
             cout << i << "." << (*v)[i] << ", ";
         }
         cout << "" << endl;
@@ -87,6 +90,26 @@ namespace xm
         cout << "*eraseIt=" << *eraseIt << endl;
 
         cout << "----------------------------" << endl;
+    }
+
+    void BaseOps::templateExample()
+    {
+        //测试类模板
+        Teacher t1("t1", 31), t2("t2", 32), t3("t3", 33), t4("t4", 34);
+
+        cout << t1 << endl;
+
+        MyVector<Teacher> tArray(4);
+        tArray[0] = t1;
+        tArray[1] = t2;
+        tArray[2] = t3;
+        tArray[3] = t4;
+
+        for (int i = 0; i < 4; i++) {
+            Teacher tmp = tArray[i];
+            tmp.printT();
+        }
+        cout << tArray;
     }
 
 } // namespace xm
