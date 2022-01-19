@@ -27,6 +27,11 @@ file(GLOB_RECURSE SRC_FILES src/*/*.cpp)
 # 添加依赖 Found Boost: /usr/local/include (found version "1.69.0") found components: filesystem system unit_test_framework 
 find_package(Boost COMPONENTS thread filesystem system unit_test_framework REQUIRED)
 
+set(Protobuf_PREFIX_PATH
+        "/usr/local/opt/protobuf@3.6/include"
+        "/usr/local/opt/protobuf@3.6/lib"
+        "/usr/local/opt/protobuf@3.6/bin" )
+list(APPEND CMAKE_PREFIX_PATH "${Protobuf_PREFIX_PATH}")
 # protobuf version 3.17.3
 # /usr/local/cmake-3.21.2-linux-x86_64/share/cmake-3.21/Modules/FindProtobuf.cmake
 find_package(Protobuf REQUIRED)
